@@ -49,7 +49,7 @@ class Main extends Component {
   }
 
   increment() {
-    this.props.dispatch({ type: 'INCREMENT' });
+    this.props.dispatch({ type: 'INCREMENT', payload: 'Huzzah!' });
   }
 
   render() {
@@ -74,7 +74,11 @@ class Main extends Component {
 const reducer = (state = { count: 0 }, action) => {
   switch (action.type) {
     case 'INCREMENT':
-      return { ...state, count: state.count + 1 };
+      return {
+        ...state,
+        count: state.count + 1,
+        extraInfo: action.payload
+      };
     default:
       return state;
   }
