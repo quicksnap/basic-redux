@@ -6,7 +6,7 @@ This is a quick example for React + Redux. You can use it to play around.
 
 - Babel: ES6 + Stage 0 ES7
 - LiveReload: Webpack + Hot Module Replacement
-- Reux DevTools
+- Redux DevTools
 - Sensible ESLint defaults
 
 ### Setup
