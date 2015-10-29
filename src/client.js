@@ -49,15 +49,17 @@ class Main extends Component {
   }
 
   render() {
-    return (<div>
+    return (
       <div>
-        Welcome! The count is currently {this.props.count}.
-      </div>
+        <div>
+          Welcome! The count is currently {this.props.count}.
+        </div>
 
-      <button onClick={::this.increment}>
-        Well, increment!
-      </button>
-    </div>);
+        <button onClick={::this.increment}>
+          Well, increment!
+        </button>
+      </div>
+    );
   }
 }
 
