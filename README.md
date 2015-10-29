@@ -9,6 +9,8 @@ This is a quick example for React + Redux. You can use it to play around.
 - Reux DevTools
 - Sensible ESLint defaults
 
+# Setup
+
 - `npm i`
 - `npm run start`
 - Then, open http://localhost:3001
