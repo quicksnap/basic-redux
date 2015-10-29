@@ -5,3 +5,5 @@ This is a quick example for React + Redux. You can use it to play around. It use
 - `npm i`
 - `npm run start`
 - Then, open http://localhost:3001
+
+This is an extremely gutted version of https://github.com/erikras/react-redux-universal-hot-example
