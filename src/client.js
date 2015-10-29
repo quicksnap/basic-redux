@@ -4,6 +4,10 @@ import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
 import ReactDOM from 'react-dom';
 
+import { createDevTools } from 'redux-devtools';
+import LogMonitor from 'redux-devtools-log-monitor';
+import DockMonitor from 'redux-devtools-dock-monitor';
+
 ////////////////////////////////////////
 /// Main Component
 ///
@@ -76,15 +80,30 @@ const reducer = (state = { count: 0 }, action) => {
   }
 };
 
-const store = createStore(reducer);
+const DevTools = createDevTools(
+  <DockMonitor toggleVisibilityKey='H'
+               changePositionKey='Q'
+               defaultIsVisible={true}>
+    <LogMonitor />
+  </DockMonitor>
+);
+
+// We enhance `createStore` with DevTools. You can disable this and simply use
+// `createStore` instead of `finalCreateStore`
+const finalCreateStore = DevTools.instrument()(createStore);
+const store = finalCreateStore(reducer);
 
 ///////////////////////////////////////
 /// Finally, we mount!
 ///
 ///////////////////////////////////////
+
 ReactDOM.render(
   <Provider store={store}>
-    <Main />
+    <div>
+      <Main />
+      <DevTools />
+    </div>
   </Provider>,
   document.getElementById('content')
 );
